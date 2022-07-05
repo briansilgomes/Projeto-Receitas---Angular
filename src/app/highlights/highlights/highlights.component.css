@@ -1,0 +1,90 @@
+.principal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 10px;
+  grid-template-areas: 'myArea myArea myArea''myArea1 myArea1 myArea1''myArea2 myArea2 myArea2''myArea3 myArea3 myArea3';
+  margin-top: 10px;
+}
+
+.principal>div {
+  font-size: 20px;
+}
+
+.title {
+  grid-area: myArea;
+  text-align: center;
+  margin-bottom: 3%;
+}
+
+
+.firsthighlights {
+  grid-area: 2 / 1 / span 2;
+  display: flex;
+  flex-direction: row;
+
+}
+
+
+/* Descrição das receitas */
+.descricao {
+  line-height: 30px;
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+.seconddescription {
+  font-size: 15px;
+}
+
+
+.btall {
+  grid-area: myArea3;
+  text-align: center;
+
+}
+
+hr {
+  width: 60%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.descricao {
+  width: 100%;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.image {
+  min-height: 300px;
+  max-height: 300px;
+}
+
+.firstimage {
+  height: 100%;
+}
+
+
+@media screen and (max-width: 760px) {
+  .principal {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 'myArea myArea''myArea1 myArea1''myArea2 myArea2''myArea3 myArea3''myArea4 myArea4';
+  }
+
+  .btall {
+    grid-area: myArea4;
+  }
+
+
+}

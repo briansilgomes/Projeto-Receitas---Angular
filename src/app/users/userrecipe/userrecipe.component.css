@@ -1,0 +1,68 @@
+.principal {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 10px;
+  margin-top: 3%;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 14% 45% auto auto;
+}
+
+/* Filtro de mensagens*/
+.odern {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+}
+
+#sorde {
+  margin-left: 1%;
+  width: 15%;
+}
+
+/*Linhas da coluna*/
+.columnrow {
+  border-bottom: 1px solid white;
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+}
+
+/* Centra o texto das 2 ultimas colunas */
+.centeritem {
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+/* Tamanho da Imagem */
+.imagerecipe {
+  height: 100px;
+}
+
+/*Linhas*/
+hr {
+  width: 70%;
+  padding: 0%;
+  margin: 0%;
+}
+
+.linerecipe {
+  padding: 0%;
+  margin: 0%;
+}
+
+.center{
+  text-align: center;
+}
+
+.form-group {
+  margin-top: 2%;
+}

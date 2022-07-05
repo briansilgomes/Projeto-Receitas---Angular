@@ -1,0 +1,54 @@
+<app-usermenu></app-usermenu>
+
+<div class="principal">
+
+    <div class="myrecipetitle">
+        <h1>{{title | uppercase}}</h1>
+        <hr>
+    </div>
+
+    <div class="menssage center">{{menssage}}</div>
+
+    <div class="content" *ngFor="let validation of recipes">
+
+        <!-- Imagem Receita-->
+        <div class="imagerecipe">
+            <a routerLink="/recipedetails/{{validation.idrecipe}}">
+                <img src="{{validation.imagerecipe}}" alt="recipe" width="100%" height="100%">
+            </a>
+        </div>
+
+        <!-- Nome Receita-->
+        <div class="columnrow">
+            <h2>{{validation.namerecipe}}</h2>
+        </div>
+
+
+
+        <!-- Estado Receita-->
+        <div class="columnrow">
+            <h2>{{validation.categoryname}}</h2>
+        </div>
+
+        <!-- Data Receita-->
+        <div class="columnrow">
+            <h2>{{validation.daterecipe | date}}</h2>
+        </div>
+
+        <!-- User Receita-->
+        <div class="columnrow">
+            <h2>{{validation.nameuser}}</h2>
+        </div>
+
+        <!-- Validar Receita-->
+        <div class="centeritem columnrow">
+
+            <button type="button" class="btn btn-secondary"
+                [routerLink]="'/editrecipe/' + validation.idrecipe">Editar</button>
+            <button type="button" class="btn btn-secondary" (click)="validateRecipe(validation)">Validar</button>
+
+        </div>
+
+    </div>
+
+</div>

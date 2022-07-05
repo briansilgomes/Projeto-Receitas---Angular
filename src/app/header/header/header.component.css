@@ -1,0 +1,50 @@
+
+
+  header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    
+}
+
+#logo{
+  flex-direction: column;
+  line-height: 7px;
+}
+
+h1{
+  line-height: 25px;
+  font-size: 30px;
+}
+
+li{
+  display: inline-block;
+  margin: 15px;
+}
+
+a{
+  color: white;
+}
+
+a:hover{
+  color: blue;
+  transition: 0.3s all;
+}
+
+#btuser{
+  width: 120px;
+}
+
+
+
+@media screen and (max-width: 760px){
+  header{
+    flex-direction: column;
+  }
+
+  ul{
+    text-align: center;
+  }
+  
+}

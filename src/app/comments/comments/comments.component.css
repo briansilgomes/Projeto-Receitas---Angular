@@ -1,0 +1,54 @@
+.principal {
+  display: grid;
+  gap: 30px;
+  padding: 10px;
+}
+
+.principal>div {
+  font-size: 15px;
+}
+
+/* Caixa de Comentários */
+
+.commentbox {
+  display: grid;
+  grid-template-columns: 10% 15% auto;
+  gap: 30px;
+}
+
+/* Imagem Utilizador */
+
+.userimage {
+  min-height: 70px;
+  max-height: 25%;
+}
+
+img {
+  border-radius: 50% 20% / 10% 40%;
+}
+
+/* Linhas */
+hr {
+  width: auto;
+  margin-top: 0%;
+}
+
+.bt {
+  margin-top: 1%;
+  margin-right: 1%;
+}
+
+.add {
+  width: 50%;
+}
+
+@media screen and (max-width: 760px) {
+  .userimage {
+    min-height: 70px;
+    max-height: 10%;
+  }
+
+  .add {
+    width: 100%;
+  }
+}

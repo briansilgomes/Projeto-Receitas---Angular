@@ -1,0 +1,49 @@
+<app-usermenu></app-usermenu>
+
+<div class="principal">
+
+  <div class="myrecipetitle">
+    <h1>{{title | uppercase}}</h1>
+    <hr>
+  </div>
+
+  <!-- Ordenação-->
+  <div class="odern">
+    <h2>Ordenar por:</h2>
+    <select class="form-select" id="sorde" (change)="orderbyState()" [(ngModel)]="searchselected">
+      <option value="0" selected>Todos</option>
+      <option value="2" selected>Publicado</option>
+      <option value="7" selected>Por Validar</option>
+    </select>
+  </div>
+
+  
+  <div class="menssage center">{{menssage}}</div>
+  
+  <div class="content" *ngFor="let recipe of recipe">
+
+    <!-- Imagem Receita-->
+    <div class="imagerecipe">
+      <a routerLink="/recipedetails/{{recipe.idrecipe}}">
+        <img src="{{recipe.imagerecipe}}" alt="recipe" width="100%" height="100%">
+      </a>
+    </div>
+
+    <!-- Nome Receita-->
+    <div class="columnrow">
+      <h2>{{recipe.namerecipe}}</h2>
+    </div>
+
+    <!-- Estado Receita-->
+    <div class="centeritem columnrow">
+      <h2>{{recipe.daterecipe | date}}</h2>
+    </div>
+
+    <!-- Data da Receita-->
+    <div class="centeritem columnrow">
+      <h2>{{recipe.namestate}}</h2>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,49 @@
+<app-usermenu></app-usermenu>
+
+<div class="principal">
+
+    <div class="myrecipetitle">
+        <h1>{{title | uppercase}}</h1>
+        <hr>
+    </div>
+
+    <div class="menu">
+        <input type="text" class="form-control" placeholder="Procurar Receita..." [(ngModel)]="searchrecipe"
+            (ngModelChange)="serchRecipe()">
+    </div>
+
+    <div *ngIf="menssageerror!=''" class="menssage">{{menssageerror}}</div>
+    <div *ngIf="menssage!=''" class="center">{{menssage}}</div>
+
+    <div class="content" *ngFor="let reci of recipe">
+
+        <!-- Imagem Receita-->
+        <div class="imagerecipe">
+            <a routerLink="/recipedetails/{{reci.idrecipe}}">
+                <img src="{{reci.imagerecipe}}" alt="recipe" width="100%" height="100%">
+            </a>
+        </div>
+
+        <!-- Nome Receita-->
+        <div class="columnrow">
+            <h2>{{reci.namerecipe}}</h2>
+        </div>
+
+        <!-- Estado Receita-->
+        <div class="columnrow">
+            <h2>{{reci.categoryname}}</h2>
+        </div>
+
+        <!-- Validar Destacar-->
+        <div class="centeritem columnrow">
+
+            <button type="button" *ngIf="reci.highlight == 0" class="btn btn-secondary bt" id="btinsert"
+                (click)="sendHighlights(reci)">Destacar</button>
+            <button type="button" *ngIf="reci.highlight == 1" class="btn btn-warning bt" id="btremove"
+                (click)="removeHighlights(reci)">Destacado</button>
+
+        </div>
+
+    </div>
+
+</div>

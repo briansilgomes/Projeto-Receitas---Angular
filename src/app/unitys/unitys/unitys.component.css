@@ -1,0 +1,61 @@
+.principal {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 10px;
+  margin-top: 3%;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: auto 24%;
+}
+
+.operation {
+  padding: 2%;
+}
+
+.roweffect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid white;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: 20% 40%;
+  gap: 30px;
+}
+
+/*Linhas*/
+hr {
+  width: 70%;
+  padding: 0%;
+  margin: 0%;
+}
+
+.hrsubmit {
+  width: 100%;
+  padding: 0%;
+  margin-top: 5%;
+}
+
+.row {
+  width: 100%;
+  padding: 0%;
+  margin: 0%;
+}
+
+.bt {
+  margin-top: 2%;
+  margin-right: 1%;
+}
+
+.center {
+  text-align: center;
+}

@@ -1,0 +1,29 @@
+<app-usermenu></app-usermenu>
+<div class="principal">
+
+    <div class="mytitle">
+        <h1>{{title | uppercase}}</h1>
+        <hr>
+    </div>
+
+    <div class="menu">
+        <button class="btn btn-secondary" routerLink="/addunity">Nova Unidade</button>
+        <input type="text" class="form-control" placeholder="Procurar Unidade..." [(ngModel)]="searchunity"
+            (ngModelChange)="serachUnity()">
+    </div>
+
+    <div class="menssage center">{{menssage}}</div>
+
+    <div class="content" *ngFor="let unity of unitys">
+
+        <div class="roweffect">
+            <h2>{{unity.nameunity| uppercase}}</h2>
+        </div>
+
+        <div class="operation roweffect">
+            <button type="button" class="btn btn-secondary" [routerLink]="'/editunity/' + unity.idunity">Editar</button>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,73 @@
+<app-usermenu></app-usermenu>
+<div class="principal">
+
+    <div class="myrecipetitle">
+        <h1>{{title | uppercase}}</h1>
+        <hr>
+    </div>
+
+    <div class="content">
+
+        <div class="post-form">
+
+            <form (ngSubmit)="onSubmit()" #postForm="ngForm">
+
+                <div class="form-group">
+                    <label for="txtname" class="form-label">Nome Utilizador</label>
+                    <input type="text" name="txtname" id="txtname" class="form-control" [(ngModel)]="listusers.nameuser"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="txtemail" class="form-label">Email Utilizador</label>
+                    <input type="email" name="txtemail" id="txtemail" class="form-control"
+                        [(ngModel)]="listusers.emailuser" (ngModelChange)="existUser()" required>
+                    <div class="menssage">{{erroremail}}</div>
+                </div>
+
+                <!-- Password-->
+                <div class="form-group">
+                    <label for="txtpassword1" class="form-label">Password</label>
+                    <input type="password" name="txtpassword1" id="txtpassword1" class="form-control"
+                        [(ngModel)]="listusers.passworduser" required>
+                </div>
+
+                <div class="form-group" *ngIf="userpermission == '1'">
+                    <label for="combouni" class="form-label">Permissões:</label>
+                    <select class="form-select" aria-label="Default select example" id="combouni" name="combouni"
+                        [(ngModel)]="listusers.idpermission" required>
+                        <option id="optionperm" *ngFor="let permi of permission" value="{{permi.idpermission}}">
+                            {{permi.namepermission}}
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group" *ngIf="userpermission == '1'">
+                    <label for="combostate" class="form-label">Estado da Conta:</label>
+                    <select class="form-select" aria-label="Default select example" id="combostate" name="combostate"
+                        [(ngModel)]="listusers.idstate" required>
+                        <option *ngFor="let state of state" id="combostate" value="{{state.idstate}}">
+                            {{state.nameState}}
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <hr class="hrsubmit">
+                    <button type="submit" class="btn btn-secondary bt" id="btsubmit"
+                        [disabled]="!postForm.form.valid">GRAVAR</button>
+                    <button type="button" class="btn btn-secondary bt" id="btvoltar" (click)="onCancel()">
+                        Cancelar</button>
+                </div>
+
+            </form>
+
+            <div class="menssage form-group">
+                {{menssage}}
+            </div>
+
+
+        </div>
+
+    </div>
+</div>

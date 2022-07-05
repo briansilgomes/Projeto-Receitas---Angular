@@ -1,0 +1,103 @@
+.principal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 10px;
+  grid-template-areas: "myArea myArea myArea" "myArea1 myArea1 myArea1" "myArea2 myArea2 myArea2" "myArea3 myArea3 myArea3";
+  margin-top: 10px;
+}
+
+.principal > div {
+  font-size: 20px;
+}
+
+/* Descrição das receitas */
+.descricao {
+  line-height: 30px;
+  font-family: "Roboto", sans-serif;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+.seconddescription {
+  font-size: 15px;
+}
+
+hr {
+  width: 60%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.descricao {
+  width: 100%;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.image {
+  min-height: 300px;
+  max-height: 300px;
+}
+
+.firstimage {
+  height: 100%;
+}
+
+/* Filtro de mensagens*/
+
+.menu {
+  grid-area: myArea;
+}
+
+.odern {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  margin-top: 5%;
+}
+
+#sorde {
+  margin-left: 1%;
+  width: 15%;
+}
+
+#formsearch {
+  margin-top: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  height: 25%;
+}
+
+#btsearch {
+  margin-left: 1%;
+  width: 17%;
+}
+
+.recipestitle {
+  text-align: center;
+}
+
+.listrecipe {
+  margin-top: 7%;
+}
+
+.center{
+  text-align: center;
+}
+
+@media screen and (max-width: 760px) {
+  .principal {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

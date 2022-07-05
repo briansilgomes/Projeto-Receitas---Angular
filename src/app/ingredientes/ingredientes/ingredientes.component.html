@@ -1,0 +1,30 @@
+<app-usermenu></app-usermenu>
+<div class="principal">
+
+    <div class="myrecipetitle">
+        <h1>{{title | uppercase}}</h1>
+        <hr>
+    </div>
+
+    <div class="menu">
+        <button class="btn btn-secondary" routerLink="/addingredient">Novo Ingrediente</button>
+        <input type="text" class="form-control" placeholder="Procurar Ingrediente..." [(ngModel)]="searchingre"
+            (ngModelChange)="serachIngredient()">
+    </div>
+
+    <div class="menssage center">{{menssageerror}}</div>
+
+    <div class="content" *ngFor="let ingre of ingredients">
+
+        <div class="nameigrediente roweffect">
+            <h2>{{ingre.nameingredient | uppercase}}</h2>
+        </div>
+
+        <div class="operation roweffect">
+            <button type="button" class="btn btn-secondary"
+                [routerLink]="'/editingredient/' + ingre.idingredient">Editar</button>
+        </div>
+
+    </div>
+
+</div>

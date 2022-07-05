@@ -1,0 +1,38 @@
+.principal {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 10px;
+    margin-top: 3%;
+  }
+  
+  .formrecipe {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 25px;
+  }
+
+  .formingredient{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 25px;
+
+  }
+  
+  .myrecipetitle{
+    margin-bottom: 3%;
+  }
+
+  .bt{
+    margin-top: 1%;
+    margin-right: 1%;
+  }
+
+  .listingredient{
+    display: grid;
+    grid-template-columns:repeat(2,1fr);
+    gap: 20px;
+    align-items: center;
+    border-bottom: 1px solid white;
+    padding: 2%;
+  }

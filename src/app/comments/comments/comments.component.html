@@ -1,0 +1,61 @@
+<div class="principal">
+
+    <!-- Titulo -->
+    <div class="title">
+        <hr>
+        <h1>Comentários</h1>
+    </div>
+
+    <div class="form-group">{{menssage}}</div>
+
+    <div class="commentbox" *ngFor="let comment of comment">
+
+        <!-- Imagem  -->
+        <div class="userimage">
+            <img src="{{comment.userimage}}" alt="user" width="100%" height="100%">
+        </div>
+
+        <!-- Utilizador-->
+        <div class="user">
+            <p>{{comment.username}}</p>
+            <p>{{comment.datecomment | date}}</p>
+            <p>Classificação: {{comment.classificationrecipe}}/5</p>
+        </div>
+
+        <!-- Comentario-->
+        <div class="comment">
+            <p>{{comment.commentrecipe}}</p>
+        </div>
+
+    </div>
+
+    <div class="addcomment" *ngIf="user == true">
+        <hr>
+
+        <form (ngSubmit)="onSubmit()" #postForm="ngForm">
+
+            <div class="form-group">
+                <label for="txtcomment" class="form-label">COMENTÁRIO</label>
+                <textarea name="txtcomment" id="txtcomment" class="form-control add"
+                    [(ngModel)]="addcomment.commentrecipe" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="txtclassification" class="form-label">CLASSIFICAÇÃO (1/5)</label>
+                <input type="number" name="txtclassification" id="txtclassification" class="form-control add"
+                    [(ngModel)]="addcomment.classificationrecipe" required min="1" max="5">
+            </div>
+
+            {{addmenssage}}
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-secondary bt" id="btsubmit"
+                    [disabled]="!postForm.form.valid">GRAVAR</button>
+                <button type="button" class="btn btn-secondary bt" id="btvoltar" (click)="onCancel()"> Cancelar</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

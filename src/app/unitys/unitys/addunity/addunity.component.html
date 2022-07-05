@@ -1,0 +1,46 @@
+<app-usermenu></app-usermenu>
+<div class="principal">
+
+    <div class="mytitle">
+        <h1>{{title | uppercase}}</h1>
+        <hr>
+    </div>
+
+
+    <div class="content">
+
+        <div class="post-form">
+
+            <form (ngSubmit)="onSubmit()" #postForm="ngForm" (change)="clean()">
+
+                <div class="form-group">
+                    <label for="txtname" class="form-label">Nome Unidade</label>
+                    <input type="text" name="txtname" id="txtname" class="form-control" [(ngModel)]="unity.nameunity"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="txtsigla" class="form-label">Sigla Unidade</label>
+                    <input type="text" name="txtsigla" id="txtsigla" class="form-control"
+                        [(ngModel)]="unity.siglaunity">
+                </div>
+
+                <div class="menssage form-group">{{menssageerror}}</div>
+                <div class="form-group">{{menssage}}</div>
+
+                <div class="form-group">
+                    <hr class="hrsubmit">
+                    <button type="submit" class="btn btn-secondary bt" id="btsubmit"
+                        [disabled]="!postForm.form.valid">GRAVAR</button>
+                    <button type="button" class="btn btn-secondary bt" id="btvoltar" (click)="onCancel()">
+                        Cancelar</button>
+                </div>
+
+            </form>
+
+
+
+        </div>
+
+    </div>
+</div>

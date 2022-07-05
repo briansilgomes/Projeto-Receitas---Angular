@@ -1,0 +1,77 @@
+.principal {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 10px;
+  margin-top: 3%;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 15% 45% auto 15%;
+}
+
+
+/*Linhas da coluna*/
+.columnrow {
+  border-bottom: 1px solid white;
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+}
+
+/* Centra o texto das 2 ultimas colunas */
+.centeritem {
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+/* Tamanho da Imagem */
+.imagerecipe {
+  height: 100px;
+}
+
+/*Linhas*/
+hr {
+  width: 70%;
+  padding: 0%;
+  margin: 0%;
+}
+
+.linerecipe {
+  padding: 0%;
+  margin: 0%;
+}
+
+button {
+  margin: 2%;
+}
+
+.menssage {
+  color: red;
+}
+
+.center {
+  text-align: center;
+}
+
+.menu {
+  width: 50%;
+}
+
+@media screen and (max-width: 760px) {
+
+  h2 {
+    font-size: 17px;
+  }
+
+  .content {
+    grid-template-columns: 15% 35% auto 15%;
+  }
+
+
+}

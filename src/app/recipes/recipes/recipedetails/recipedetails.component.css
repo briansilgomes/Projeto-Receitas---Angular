@@ -1,0 +1,73 @@
+.principal {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.principal > div {
+  font-size: 20px;
+}
+
+hr {
+  margin-top: 0%;
+}
+
+.information {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.informationlist {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  list-style-type: none;
+  padding: 0%;
+}
+
+.ingredientslist {
+  list-style-type: none;
+  padding: 0%;
+}
+
+h1 {
+  margin-bottom: 3%;
+}
+
+.favo {
+  cursor: pointer;
+  font-size: 17px;
+}
+a {
+  color: white;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+@media (max-width: 760px) {
+  .informationlist {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .information {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

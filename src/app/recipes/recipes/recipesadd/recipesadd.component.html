@@ -1,0 +1,145 @@
+
+<app-usermenu></app-usermenu>
+<div class="principal">
+
+    <div class="myrecipetitle">
+        <h1>{{title | uppercase}}</h1>
+        <hr>
+   
+    </div>
+
+    <div class="content">
+
+        <div class="formrecipe">
+            
+            <form #postForm="ngForm">
+
+                <div class="form-group">
+                    <label for="txtname" class="form-label">Nome Receita</label>
+                    <input type="text" name="txtname" id="txtname" class="form-control" [(ngModel)]="addrecipe.namerecipe" required>
+                </div>
+              
+                <!-- Categoria-->
+                <div class="form-group">
+                    <label for="combocate" class="form-label">Categoria:</label>
+                    <select class="form-select" aria-label="Default select example" id="combocate" name="combocate" [(ngModel)]="addrecipe.idcategory" required>
+                        <option id="combcat" *ngFor="let cate of category" value="{{cate.idcategory}}">
+                            {{cate.namecategory}}
+                        </option>
+                    </select>
+                </div>
+
+                <!-- Dificuldade-->
+                <div class="form-group">
+                    <label for="combodif" class="form-label">Dificuldade:</label>
+                    <select class="form-select" aria-label="Default select example" id="combodif" name="combodif" [(ngModel)]="addrecipe.iddifficulty" required>
+                        <option id="combcat" *ngFor="let difficult of difficult" value="{{difficult.iddifficulty}}">
+                            {{difficult.namedifficulty}}
+                        </option>
+                    </select>
+                </div>
+
+                <!-- Duração -->
+                <div class="form-group">
+
+                    <label for="txtduration" class="form-label">Duração:</label>
+                    <input type="time" class="form-control" aria-label="With textarea" id="txtduration" name="txtduration" required [(ngModel)]="addrecipe.durationrecipe">
+
+                </div>
+
+                <!-- Modo Peparação -->
+                <div class="form-group">
+
+                    <label for="txtmode" class="form-label">Modo de Preparação:</label>
+                    <textarea class="form-control" aria-label="With textarea" id="textmode" name="textmode" required [(ngModel)]="addrecipe.preparationrecipe"></textarea>
+
+                </div>
+
+            </form>
+            
+            <div>
+
+                <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload accept=".jpg, .jpeg, .png">
+            </div>
+        </div>
+
+        <div class="formingredient">
+        
+         <div>
+             <hr>
+             <h1>INGREDIENTES</h1>
+             
+             <!-- Form Ingredientes-->
+            <form (ngSubmit)="addTemp()" #postFormIngre="ngForm">
+                  
+                <!-- Lista de Ingredientes -->
+                <div class="form-group">
+                    <label for="combingredient" class="form-label">Ingrediente</label>
+                    <select class="form-select" aria-label="Default select example" id="combingredient" name="combingredient" [(ngModel)]="addingredientrecipe.idingredient" required>
+                        <option id="optioningredient" *ngFor="let ingredient of ingredient" value="{{ingredient.idingredient}}">
+                            {{ingredient.nameingredient}}
+                        </option>
+                    </select>
+                </div>
+
+                 <!-- Unidade de Medidas-->
+                 <div class="form-group">
+                    <label for="combouni" class="form-label">Unidade de Medida:</label>
+                    <select class="form-select" aria-label="Default select example" id="combouni" name="combouni" [(ngModel)]="addingredientrecipe.idunity" required>
+                        <option id="optionuni" *ngFor="let unity of unity" value="{{unity.idunity}}">
+                            {{unity.nameunity}}
+                        </option>
+                    </select>
+                </div>
+
+                 <!-- Quantidades -->
+                <div class="form-group">
+                    <label for="txtquant" class="form-label">Quantidades:</label>
+                    <input type="number" class="form-control" id="txtquant" name="txtquant" [(ngModel)]="addingredientrecipe.quantity" min="1" required>
+                </div>
+
+                <div class="operation form-group">
+                    <button type="submit" class="btn btn-secondary bt" id="btsubmitingre" [disabled]="!postFormIngre.form.valid">ADICIONAR INGREDIENTE</button>
+                </div>
+
+            </form>
+
+         </div>
+
+         <!-- Lista de Ingredientes -->
+         <div>
+            <hr>
+            <h1>LISTA DE INGREDIENTES</h1>
+            
+            <div class="listingredient" *ngFor="let temp of listemp">
+                
+                    {{temp.quantityingredient}}
+                    {{temp.nameunity}} - 
+                    {{temp.nameingredient}}
+                    <div>
+                        <button type="submit" class="btn btn-secondary bt" id="btsubmitingre" (click)="removeTemp(temp.idtemp)">REMOVER</button>
+                    </div>
+                
+            </div>
+
+         </div>
+            
+        
+        </div>
+
+    </div>
+
+  
+ 
+
+    <div class="operation form-group">
+        <hr>
+        {{addmenssage}}
+        <div class="operation">
+        <button type="submit" class="btn btn-secondary bt" id="btsubmit" [disabled]="!postForm.form.valid" (click)="onSubmit()">GRAVAR</button>
+        <button type="button" class="btn btn-secondary bt" id="btvoltar" (click)="onCancel()" > Cancelar</button>
+        </div>
+    </div>
+
+
+</div>

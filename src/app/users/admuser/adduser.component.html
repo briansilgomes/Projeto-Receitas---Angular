@@ -1,0 +1,54 @@
+<app-usermenu></app-usermenu>
+
+<div class="principal">
+
+    <div class="myrecipetitle">
+        <h1>{{title | uppercase}}</h1>
+        <hr>
+    </div>
+
+    <div class="menu">
+        <button class="btn btn-secondary" routerLink="/useradd">Novo Utilizador</button>
+        <input type="text" class="form-control" placeholder="Procurar Utilizador..." [(ngModel)]="searchuser"
+            (ngModelChange)="serachUser()">
+    </div>
+
+    <div class="menssage">
+        {{menssage}}
+    </div>
+
+    <div *ngFor="let user of users">
+
+        <div class="content" *ngIf="user.nameuser !='Administrador'">
+
+
+            <div class="columnrow">
+                <h2>{{user.nameuser}}</h2>
+            </div>
+
+            <div class="columnrow">
+                <h2>{{user.emailuser}}</h2>
+            </div>
+
+            <div class="columnrow">
+                <h2>{{user.permission}}</h2>
+            </div>
+
+            <div class="columnrow centeritem">
+                <h2>{{user.state}}</h2>
+            </div>
+
+            <div class="centeritem columnrow">
+
+                <button type="button" *ngIf="user.state == 'Ativo' && user.iduser!=1 && user.emailuser!=emaillogin"
+                    class="btn btn-secondary bt" id="btinsert" (click)="lookUser(user)">Bloquear</button>
+                <button type="button" *ngIf="user.state == 'Bloqueado'" class="btn btn-warning bt" id="btremove"
+                    (click)="unLookUser(user)">Desbloquear</button>
+                <button type="button" *ngIf="user.iduser != iduserlogin" class="btn btn-secondary bt" id="btedit"
+                    [routerLink]="'/useredit/'+ user.iduser">Editar</button>
+
+            </div>
+        </div>
+    </div>
+
+</div>
